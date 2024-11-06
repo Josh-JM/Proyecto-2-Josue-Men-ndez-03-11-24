@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportsGeneration));
             button1 = new Button();
             richTextBox1 = new RichTextBox();
+            button3 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -52,12 +53,34 @@
             // 
             // richTextBox1
             // 
+            richTextBox1.BackColor = Color.FromArgb(253, 250, 238);
+            richTextBox1.BorderStyle = BorderStyle.None;
+            richTextBox1.Font = new Font("Kristen ITC", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
             richTextBox1.Location = new Point(316, 342);
             richTextBox1.Name = "richTextBox1";
+            richTextBox1.ReadOnly = true;
             richTextBox1.Size = new Size(1306, 472);
             richTextBox1.TabIndex = 3;
             richTextBox1.Text = "";
             richTextBox1.TextChanged += richTextBox1_TextChanged;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.Transparent;
+            button3.Cursor = Cursors.Hand;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button3.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Harlow Solid Italic", 18.5F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            button3.ForeColor = Color.Black;
+            button3.Location = new Point(838, 824);
+            button3.Name = "button3";
+            button3.Size = new Size(246, 46);
+            button3.TabIndex = 14;
+            button3.Text = "Generar";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // ReportsGeneration
             // 
@@ -65,6 +88,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            Controls.Add(button3);
             Controls.Add(richTextBox1);
             Controls.Add(button1);
             Name = "ReportsGeneration";
@@ -76,5 +100,6 @@
 
         private Button button1;
         private RichTextBox richTextBox1;
+        private Button button3;
     }
 }

@@ -42,6 +42,11 @@ namespace Proyecto__2_Josue_Menéndez_03_11_24
             {
                 PrincipalForm.ShowLibrarianMenu();
             }
+            else
+            {
+                MessageBox.Show("Usuario no Encontrado o Credenciales Incorrectas");
+            }
+
 
         }
 

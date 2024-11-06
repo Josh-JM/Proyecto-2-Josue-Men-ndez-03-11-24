@@ -51,6 +51,7 @@ namespace Proyecto__2_Josue_Menéndez_03_11_24
 
         private void button3_Click_1(object sender, EventArgs e)
         {
+            MessageBox.Show("Hasta Pronto...");
             Close();
         }
 
@@ -256,6 +257,20 @@ namespace Proyecto__2_Josue_Menéndez_03_11_24
             return null;
         }
 
+        public Book SequentialBookSearchWithISB(LinkedList<Book> BookList, string ISBN)
+        {
+            foreach (Book book in BookList)
+            {
+                if (book.ISBN == ISBN)
+                {
+                    return book;
+                }
+            }
+            return null;
+        }
+
+
+
         public Book BookRemove(LinkedList<Book> BookList, string ISBN)
         {
             foreach (Book book in BookList)
@@ -347,15 +362,39 @@ namespace Proyecto__2_Josue_Menéndez_03_11_24
                 queue.Enqueue(TemporalQueue.Dequeue());
             }
         }
-         public void ShowReport(string textbox)
+        public Loan ShowReport()
         {
             foreach (Loan loan in LoanList)
             {
                 if (loan.DevolutionDate == null)
                 {
-                    textbox = ($"Fecha de Préstamo: {loan.LoanDate} " +  $"\nUsuario del Préstamo: {loan.Lector.Username}" + $"\nLibro Prestado: {loan.Book.Title}");
+                    return loan;
                 }
             }
+            return null;
         }
+
+        public void UndoLastAction()
+        {
+            if (LoanList.Count > 0)
+            {
+                Loan lastAction = LoanList.Pop();
+                if (lastAction.DevolutionDate == null)
+                {
+                    Devolution(lastAction.Book, lastAction.Lector);
+                    MessageBox.Show($"Se deshizo el préstamo del libro {lastAction.Book.Title}.");
+                }
+                else
+                {
+                    LoanAdd(lastAction.Book, lastAction.Lector);
+                    MessageBox.Show($"Se deshizo la devolución del libro {lastAction.Book.Title}.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay acciones para deshacer.");
+            }
+        }
+
     }
 }

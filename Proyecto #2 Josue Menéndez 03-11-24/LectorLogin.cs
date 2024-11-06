@@ -41,9 +41,14 @@ namespace Proyecto__2_Josue_Menéndez_03_11_24
         {
             Form1 PrincipalForm = (Form1)this.ParentForm;
 
+
             if (PrincipalForm.FindUsersLectors(richTextBox1.Text) == true && PrincipalForm.FindPasswordsLectors(textBox1.Text) == true)
             {
                 PrincipalForm.ShowLectorMenu();
+            }
+            else
+            {
+                MessageBox.Show("Usuario no Encontrado o Credenciales Incorrectas");
             }
 
         }

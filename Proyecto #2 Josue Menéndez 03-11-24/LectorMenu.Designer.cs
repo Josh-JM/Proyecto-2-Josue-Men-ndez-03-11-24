@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LectorMenu));
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
+            button4 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -88,12 +90,30 @@
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
+            // button4
+            // 
+            button4.BackColor = Color.Transparent;
+            button4.BackgroundImageLayout = ImageLayout.None;
+            button4.Cursor = Cursors.Hand;
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button4.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.ForeColor = Color.Transparent;
+            button4.Location = new Point(74, 848);
+            button4.Name = "button4";
+            button4.Size = new Size(134, 138);
+            button4.TabIndex = 5;
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
+            // 
             // LectorMenu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources._5;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
+            Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -108,5 +128,6 @@
         private Button button1;
         private Button button2;
         private Button button3;
+        private Button button4;
     }
 }

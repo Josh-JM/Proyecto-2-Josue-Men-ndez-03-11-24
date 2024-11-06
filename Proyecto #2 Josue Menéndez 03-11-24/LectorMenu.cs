@@ -35,5 +35,11 @@ namespace Proyecto__2_Josue_Menéndez_03_11_24
             Form1 PrincipalForm = (Form1)this.ParentForm;
             PrincipalForm.ShowLectorDevolution();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form1 PrincipalForm = (Form1)this.ParentForm;
+            PrincipalForm.UndoLastAction();
+        }
     }
 }
